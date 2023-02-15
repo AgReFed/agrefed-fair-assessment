@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: AgReFed FAIR Data Assessment Tool
+message: Please cite this software using these metadata.
+type: software
+authors:
+  - given-names: Chris
+    family-names: Bahlo
+    email: c.bahlo@federation.edu.au
+    orcid: https://orcid.org/0000-0003-4185-5542
+doi: 
+date-released: 2023-02-15
+keywords:
+  - FAIR
+  - Research Data
+  - FAIR data
+  - FAIR assessment
+  - Agricultural Research Federation
+  - AgReFed
+license: MIT
