@@ -1,0 +1,739 @@
+{
+    "version": 1.1,
+    "compliance_levels": [
+        {
+            "text": "Not yet",
+            "class": "light"
+        },
+        {
+            "text": "Minimum acceptable",
+            "class": "primary"
+        },
+        {
+            "text": "Acceptable",
+            "class": "info"
+        },
+        {
+            "text": "Acceptable (ideal)",
+            "class": "success"
+        }
+    ],
+    "status_options": [
+        {
+            "value": "not being considered yet",
+            "text": "not being considered yet"
+        },
+        {
+            "value": "under consideration or in planning phase",
+            "text": "under consideration or in planning phase"
+        },
+        {
+            "value": "in implementation phase",
+            "text": "in implementation phase"
+        },
+        {
+            "value": "fully implemented",
+            "text": "fully implemented"
+        }
+    ],
+    "questions": [
+        {
+            "id": 1,
+            "Number": "q-1",
+            "Question": "Q1 The data product has been assigned (an) identifier(s)",
+            "Help": "<p>Datasets and other digital resources must have unique identifiers (in addition to names). These can be local identifiers such as assigned ID numbers, or they can be URLs to where a dataset can be found on the internet. However, AgReFed requires a globally unique identifier that is citable and persistent, such as a DOI (Digital Object Identifier), Handle or PURL (Persistent Uniform Resource Locator). </p><p>DOIs are used to uniquely identify both research data and software, and provide a persistent link to the location of the object on the internet. DOIs also enable citation and citation metrics. </p><p>For more information, please see these additional ARDC resources:</p><p><a href='https://www.ands.org.au/guides/doi' target='_blank'>DOI system and research data</a></p><p><a href='https://ardc.edu.au/resources/working-with-data/citation-identifiers/data-citation/' target='_blank'>DOIs for data citation</a></p><p><a href='https://ardc.edu.au/resources/working-with-research-software/software-citation/' target='_blank'>DOIs for software citation</a></p><p><a href='https://ardc.edu.au/services/identifier/doi/' target='_blank'>ARDC DataCite DOI Service</a></p><p><a href='https://www.doi.org/factsheets/DOI_PURL.html' target='_blank'>DOIs and PURLs</a></p><p><a href='https://www.ands.org.au/__data/assets/pdf_file/0011/394247/Handle-Service-Identify-my-data.pdf' target='_blank'>ANDS Guide: Handle service</a></p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "No identifier",
+                    "evidence": "Do you have any comments on plans to implement or otherwise?",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text": "Local identifier",
+                    "evidence": "Please describe/provide local identifier. For example, an ID number that you, your organisation, or a third party has assigned to the data product",
+                    "threshold": "no",
+                    "value": 2,
+                    "compliance": 0,
+                    "data_steward_evidence": "Check if the Data identifier given by provider is globally unique and persistent. If not, make recommendations - Check URL, IRI of data identifier for - <br>FsF-F1-01D - Data is assigned a globally unique identifier<br>Refer to list of globally unique identifier schemes (see resources under FsF-F1-01D). Check if the identifier is specified based on a globally unique identifier scheme. <br>FsF-F1-02D - Data is assigned a persistent identifier<br>Refer to list of globally unique identifier scheme (see resources under FsF-F1-01D)<br>Check if the identifier is specified based on a globally unique identifier scheme"
+                },
+                {
+                    "id": 3,
+                    "text": "Web address (URL)",
+                    "evidence": "Please provide web address (URL)",
+                    "threshold": "no",
+                    "value": 3,
+                    "compliance": 0,
+                    "data_steward_evidence": "Check the Data identifier (IRI, URL) given by provider for - <br>FsF-F1-01D - Data is assigned a globally unique identifier <br>Refer to list of globally unique identifier schemes (see resources under FsF-F1-01D). Check if the identifier is specified based on a globally unique identifier scheme. <br>FsF-F1-02D - Data is assigned a persistent identifier <br>Refer to list of globally unique identifier scheme (see resources under FsF-F1-01D) <br>Check if the identifier is specified based on a globally unique identifier scheme <br>"
+                },
+                {
+                    "id": 4,
+                    "text": "Globally unique, citable and persistent identifier (e.g. DOI, PURL, or Handle)",
+                    "evidence": "Please provide: Globally unique, citable and persistent identifier (e.g. DOI, PURL, or Handle)",
+                    "threshold": "yes",
+                    "value": 4,
+                    "compliance": 3,
+                    "data_steward_evidence": "Check the Data identifier (IRI, URL) given by provider for - <br>FsF-F1-01D - Data is assigned a globally unique identifier<br>Refer to list of globally unique identifier schemes (see resources under FsF-F1-01D). Check if the identifier is specified based on a globally unique identifier scheme. <br>FsF-F1-02D - Data is assigned a persistent identifier<br>Refer to list of globally unique identifier scheme (see resources under FsF-F1-01D)<br>Check if the identifier is specified based on a globally unique identifier scheme<br>"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "Number": "q-2",
+            "Question": "Q2 The data product identifier is included in all metadata records/files describing the data",
+            "Help": "<p>Metadata contain information about a dataset or other digital resource. Metadata are used to facilitate and support resource discovery, identification, the organisation of resources, and the interoperability of the resource(s) it represents, as well as the interoperability of the metadata itself. Find out more about metadata on the <a href='https://ardc.edu.au/resources/working-with-data/metadata/' target='_blank'>ARDC's Metadata page</a>.</p><p>A unique and persistent data identifier (please refer to Question 1) should be included in the metadata record.</p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "No",
+                    "evidence": "Do you have any comments on plans to implement or otherwise?",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text": "Yes",
+                    "evidence": "Please provide link to the metadata record that contains the data identifier. Where possible provide the link to your most comprehensive 'point of truth' metadata record here - for example, your organisational, institutional or scientific repository.",
+                    "threshold": "yes",
+                    "value": 2,
+                    "compliance": 3,
+                    "data_steward_evidence": "Check - a unique and persistent data identifier from Q1 should be in the metadata record.<br>FsF-F3-01M - Metadata includes the identifier of the data it describes.<br>For assessment, requires the data identifier (IRI, URL) and access to Machine-accessible and readable metadata."
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "Number": "q-3",
+            "Question": "Q3 The data product is described by a metadata record",
+            "Help": "<p>Metadata contain information about a dataset or other digital resource. Metadata are used to facilitate and support resource discovery, identification, the organisation of resources, and the interoperability of the resource(s) it represents, as well as the interoperability of the metadata itself. Find out more about metadata on the <a href='https://ardc.edu.au/resources/working-with-data/metadata/' target='_blank'>ARDC's Metadata page</a>.<p>The AgReFed community has identified some minimum required fields for data to be made discoverable through AgReFed. Please refer to Appendix 1 of the <a href='https://zenodo.org/record/3993784' target='_blank'>The Agricultural Research Federation (AgReFed) Technical and Information Policy Suite</a>.</p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "The data is not described",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Aligns with FsF-F2-01M - Metadata includes descriptive core elements (creator, title, data identifier, publisher, publication date, summary and keywords) to support data findability<br>and FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine.<br><br>The AgReFed community has identified some minimum required fields for data to be made discoverable through AgReFed. This could be done by IRI, URL, or if not available be screen view/other documentation from provider of local metadata record.<br><br>The assessment should be preserved for the point in time. <br><br>The presence of minimum content could be assessed manually, or it could be assessed as recommended under FsF-F2-01M: Use the data identifier to access its metadata document. Parse or retrieve core metadata, e.g., through one or more options below, combine the results and then verify presence/absence of the core elements in the metadata.<br><br>- Structured data embedded in the landing page of the identifier (e.g., Schema.org, Dublin Core and OpenGraph meta tag <br>- Typed Links in the HTTP Link header; for more information, see https://signposting.org/conventions<br>- If the identifier specified is a persistent identifier, use it to retrieve the metadata of the data from its PID provider, e.g., see DataCite Content Resolver at https://datacite.org/content.htm<br><br>FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine. Assessment protocol of FsF-F4-01M - The following methods may be applied to determine if metadata of the data is accessible programmatically<br>- Check if the metadata provision endpoint returns metadata records based on a request using the data identifier (see comment* below<br>- Check if search engine friendly structured data is embedded in the data landing page with a proper resource type, e.g., schema.org representation of type ‘Dataset’ or ‘Collection’"
+                },
+                {
+                    "id": 2,
+                    "text": "Brief title and description",
+                    "evidence": "Please provide link to the meta data ",
+                    "threshold": "no",
+                    "value": 2,
+                    "compliance": 0,
+                    "data_steward_evidence": "Aligns with FsF-F2-01M - Metadata includes descriptive core elements (creator, title, data identifier, publisher, publication date, summary and keywords) to support data findability<br>and FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine.<br><br>The AgReFed community has identified some minimum required fields for data to be made discoverable through AgReFed. This could be done by IRI, URL, or if not available be screen view/other documentation from provider of local metadata record.<br><br>The assessment should be preserved for the point in time. <br><br>The presence of minimum content could be assessed manually, or it could be assessed as recommended under FsF-F2-01M: Use the data identifier to access its metadata document. Parse or retrieve core metadata, e.g., through one or more options below, combine the results and then verify presence/absence of the core elements in the metadata.<br><br>- Structured data embedded in the landing page of the identifier (e.g., Schema.org, Dublin Core and OpenGraph meta tag <br>- Typed Links in the HTTP Link header; for more information, see https://signposting.org/conventions<br>- If the identifier specified is a persistent identifier, use it to retrieve the metadata of the data from its PID provider, e.g., see DataCite Content Resolver at https://datacite.org/content.htm<br><br>FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine. Assessment protocol of FsF-F4-01M - The following methods may be applied to determine if metadata of the data is accessible programmatically<br>- Check if the metadata provision endpoint returns metadata records based on a request using the data identifier (see comment* below<br>- Check if search engine friendly structured data is embedded in the data landing page with a proper resource type, e.g., schema.org representation of type ‘Dataset’ or ‘Collection’"
+                },
+                {
+                    "id": 3,
+                    "text": "Brief title and description, and multiple other fields filled out, albeit briefly.",
+                    "evidence": "Please provide link to the metadata",
+                    "threshold": "no",
+                    "value": 3,
+                    "compliance": 0,
+                    "data_steward_evidence": "Aligns with FsF-F2-01M - Metadata includes descriptive core elements (creator, title, data identifier, publisher, publication date, summary and keywords) to support data findability<br>and FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine.<br><br>The AgReFed community has identified some minimum required fields for data to be made discoverable through AgReFed. This could be done by IRI, URL, or if not available be screen view/other documentation from provider of local metadata record.<br><br>The assessment should be preserved for the point in time. <br><br>The presence of minimum content could be assessed manually, or it could be assessed as recommended under FsF-F2-01M: Use the data identifier to access its metadata document. Parse or retrieve core metadata, e.g., through one or more options below, combine the results and then verify presence/absence of the core elements in the metadata.<br><br>- Structured data embedded in the landing page of the identifier (e.g., Schema.org, Dublin Core and OpenGraph meta tag <br>- Typed Links in the HTTP Link header; for more information, see https://signposting.org/conventions<br>- If the identifier specified is a persistent identifier, use it to retrieve the metadata of the data from its PID provider, e.g., see DataCite Content Resolver at https://datacite.org/content.htm<br><br>FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine. Assessment protocol of FsF-F4-01M - The following methods may be applied to determine if metadata of the data is accessible programmatically<br>- Check if the metadata provision endpoint returns metadata records based on a request using the data identifier (see comment* below<br>- Check if search engine friendly structured data is embedded in the data landing page with a proper resource type, e.g., schema.org representation of type ‘Dataset’ or ‘Collection’"
+                },
+                {
+                    "id": 4,
+                    "text": "Comprehensively (including all AgReFed required fields) using a formal machine-readable metadata schema.",
+                    "evidence": "Please provide link to the meta data",
+                    "threshold": "yes",
+                    "value": 4,
+                    "compliance": 3,
+                    "data_steward_evidence": "Aligns with FsF-F2-01M - Metadata includes descriptive core elements (creator, title, data identifier, publisher, publication date, summary and keywords) to support data findability<br>and FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine.<br><br>The AgReFed community has identified some minimum required fields for data to be made discoverable through AgReFed. This could be done by IRI, URL, or if not available be screen view/other documentation from provider of local metadata record.<br><br>The assessment should be preserved for the point in time. <br><br>The presence of minimum content could be assessed manually, or it could be assessed as recommended under FsF-F2-01M: Use the data identifier to access its metadata document. Parse or retrieve core metadata, e.g., through one or more options below, combine the results and then verify presence/absence of the core elements in the metadata.<br><br>- Structured data embedded in the landing page of the identifier (e.g., Schema.org, Dublin Core and OpenGraph meta tag <br>- Typed Links in the HTTP Link header; for more information, see https://signposting.org/conventions<br>- If the identifier specified is a persistent identifier, use it to retrieve the metadata of the data from its PID provider, e.g., see DataCite Content Resolver at https://datacite.org/content.htm<br><br>FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine. Assessment protocol of FsF-F4-01M - The following methods may be applied to determine if metadata of the data is accessible programmatically<br>- Check if the metadata provision endpoint returns metadata records based on a request using the data identifier (see comment* below<br>- Check if search engine friendly structured data is embedded in the data landing page with a proper resource type, e.g., schema.org representation of type ‘Dataset’ or ‘Collection’"
+                }
+            ]
+        },
+        {
+            "id":4,
+            "Number": "q-4",
+            "Question":"Q4 The data product is described by a metadata record that is indexed in a searchable registry or repository",
+            "Help": "<p>To meet the minimum threshold, the registry or repository must be an online catalogue that lists the data product. It could be specific to agriculture (local, domain, generalist) or have a broader scope, for example <a href='https://researchdata.edu.au/' target='_blank'>Research Data Australia</a> or <a href='https://data.gov.au/' target='_blank'>data.gov.au</a>. The ideal case is discovery through more than one repository.</p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text":"The data is not described in any registry or repository",
+                    "evidence":"Do you have any comments on plans to implement or otherwise?",
+                    "threshold":"no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text":"Local institutional repository",
+                    "evidence":"Please provide a link to the metadata in the local institutional repository. This may be the link you provided to metadata in the previous questions. If you can't provide a link to the metadata in the repository please provide the name of the repository and a website for if possible",
+                    "threshold":"min",
+                    "value": 2,
+                    "compliance": 2,
+                    "data_steward_evidence": "This relates to FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine. Note which local, domain, or generalist repositories the metadata is discoverable. In particular, note if discoverable in Research Data Australia. Note if discoverable in Google Data Search and DataCite."
+                },
+                {
+                    "id": 3,
+                    "text":"Domain-specific repository",
+                    "evidence":"Please provide a link to the metadata from the domain-specific repository ",
+                    "threshold":"min",
+                    "value": 3,
+                    "compliance": 2,
+                    "data_steward_evidence": "This relates to FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine. Note which local, domain, or generalist repositories the metadata is discoverable. In particular, note if discoverable in Research Data Australia. Note if discoverable in Google Data Search and DataCite."
+                },
+                {
+                    "id": 4,
+                    "text":"Generalist public repository",
+                    "evidence":"Please provide a link to the metadata from the generalist repository ",
+                    "threshold":"min",
+                    "value": 4,
+                    "compliance": 2,
+                    "data_steward_evidence": "This relates to FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine. Note which local, domain, or generalist repositories the metadata is discoverable. In particular, note if discoverable in Research Data Australia. Note if discoverable in Google Data Search and DataCite."
+                },
+                {
+                    "id": 5,
+                    "text":"Data is in one place but discoverable through several places (i.e. other registries, RDA, Google Data Search)",
+                    "evidence":"Please provide a link to the metadata from the repositories through which it can be found",
+                    "threshold":"yes",
+                    "value": 5,
+                    "compliance": 3,
+                    "data_steward_evidence": "This relates to FsF-F4-01M - Metadata is offered in such a way that it can be retrieved by machine. Note which local, domain, or generalist repositories the metadata is discoverable. In particular, note if discoverable in Research Data Australia. Note if discoverable in Google Data Search and DataCite."
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "Number": "q-5",
+            "Question": "Q5 How accessible is the data? The access method(s) must be explicitly stated in the metadata record, e.g. if any authentication is needed, or there are any restrictions to access.",
+            "Help": "<p>This metric determines if the metadata includes the level of access to the data such as public, embargoed, restricted, or metadata-only access and its access conditions. Both access level and conditions are necessary information to potentially gain access to the data. It is recommended that data should be as open as possible and as closed as necessary.</p><ul>  <li>There are no access conditions for public data. Datasets should be released into the public domain (e.g., with an appropriate public-domain-equivalent license such as Creative Commons CC0 license) and openly accessible without restrictions when possible.</li>  <li>Embargoed access refers to data that will be made publicly accessible at a specific date. For example, a data author may release their data after having published their findings from the data. Therefore, access conditions such as the date the data will be released publically is essential and should be specified in the metadata.</li>  <li>Restricted access refers to data that can be accessed under certain conditions (e.g. because of commercial, sensitive, or other confidentiality reasons or the data is only accessible via a subscription or a fee). Restricted data may be available to a particular group of users or after permission is granted. For restricted data, the metadata should include the conditions of access to the data such as point of contact or instructions to access the data.</li>  <li>Metadata-only access refers to data that is not made publicly available and for which only metadata is publicly available.</li></ul><p>Refer: Devaraju, Anusuriya, Huber, Robert, Mokrane, Mustapha, Herterich, Patricia, Cepinskas, Linas, de Vries, Jerry, L'Hours, Herve, Davidson, Joy, & Angus White. (2020). FAIRsFAIR Data Object Assessment Metrics (0.4). Zenodo. https://doi.org/10.5281/zenodo.4081213</p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "No metadata record",
+                    "evidence": "Do you have any comments on plans to implement or otherwise?",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text": "Access to metadata only",
+                    "evidence": "Please provide link to the metadata",
+                    "threshold": "no",
+                    "value": 2,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide metadata field label and text (content) at date of assessment. Assessment as at FsF-A1-01M 10.5281/zenodo.4081213- Use the data identifier to access its metadata document.Check the presence/absence of data access level through metadata element(s). If it is embargoed data, check if the embargo end date is specified. If it is restricted data, check if the data access conditions are specified."
+                },
+                {
+                    "id": 3,
+                    "text": "Unspecified access conditions e.g. \"contact the data custodian to discuss access\"",
+                    "evidence": "Please provide link to the metadata containing the access statement",
+                    "threshold": "no",
+                    "value": 3,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide metadata field label and text (content) at date of assessment. Assessment as at FsF-A1-01M 10.5281/zenodo.4081213- Use the data identifier to access its metadata document.Check the presence/absence of data access level through metadata element(s). If it is embargoed data, check if the embargo end date is specified. If it is restricted data, check if the data access conditions are specified."
+                },
+                {
+                    "id": 4,
+                    "text": "Embargoed access after a specified date; or A de-identified version of the data is publicly accessible",
+                    "evidence": "Please provide link to the metadata containing the access statement",
+                    "threshold": "min",
+                    "value": 4,
+                    "compliance": 2,
+                    "data_steward_evidence": "Provide metadata field label and text (content) at date of assessment. Assessment as at FsF-A1-01M 10.5281/zenodo.4081213- Use the data identifier to access its metadata document.Check the presence/absence of data access level through metadata element(s). If it is embargoed data, check if the embargo end date is specified. If it is restricted data, check if the data access conditions are specified."
+                },
+                {
+                    "id": 5,
+                    "text": "Fully accessible public, or to persons who meet and follow explicitly stated conditions and processes, e.g. ethics approval for sensitive data",
+                    "evidence": "Please provide link to the metadata containing the access statement",
+                    "threshold": "yes",
+                    "value": 5,
+                    "compliance": 3,
+                    "data_steward_evidence": "Provide metadata field label and text (content) at date of assessment. Assessment as at FsF-A1-01M 10.5281/zenodo.4081213- Use the data identifier to access its metadata document.Check the presence/absence of data access level through metadata element(s). If it is embargoed data, check if the embargo end date is specified. If it is restricted data, check if the data access conditions are specified."
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "Number": "q-6",
+            "Question": "Q6 Data are available for reuse via a standardised communication protocol, such as file download over https, or a web service.",
+            "Help": "<p>Although HTTP was initially developed to transmit web pages, it has since been adopted for transfer of other types of information too. One way to exchange information is through web APIs (Application Programming Interfaces). APIs allow computer applications to share and access machine-readable data. These applications can run on computers located anywhere, relying on other network protocols in the stack (see figure above) to handle data transport.</p><p>An API can also allow applications to share and access subsets of data. This is particularly useful for datasets where it would be impractical or unsuitable to transfer them in their entirety, such as large or sensitive datasets.</p><p>There are already a number of well-documented APIs used for the exchange of data and metadata. For example, OGC WMS is used for geo-registered map images and OAI-PMH is used for exchanging repository metadata. If there is not already a standardised API for your kind of data or metadata, it’s possible for a software developer to create one using a framework such as OpenAPI.</p><p>For further information, please refer to the ARDC's page about <a href='https://ardc.edu.au/resources/standardised-communications-protocols/' target='_blank'>Standardised communications protocols</a></p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "No access to data",
+                    "evidence": "Do you have any comments on plans to implement or otherwise?",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text": "By individual arrangement",
+                    "evidence": "Please provide link to metadata where these details are specified or provide details if not stated in metadata",
+                    "threshold": 0,
+                    "value": 2,
+                    "compliance": 0,
+                    "data_steward_evidence": "Aligns with F-A1-03D - Data is accessible through a standardized communication protocol: Requires Data identifier (IRI, URL).<br>Check the application protocol of the data identifier based on the scheme part of the given IRI. In case external metadata is linked to the landing page by typed links, use the data identifier specified in the typed link.<br>Provide transfer standard e.g. from FsF-A1-03D 10.5281/zenodo.4081213 - http, https or FTP. Also, because v2 of AgReFed assessment includes information about API, list API including version."
+                },
+                {
+                    "id": 3,
+                    "text": "File download from online location",
+                    "evidence": "Please provide the data identifier (IRI, URL) or and/or metadata link through which the data is accessed",
+                    "threshold": "min",
+                    "value": 3,
+                    "compliance": 2,
+                    "data_steward_evidence": "Aligns with F-A1-03D - Data is accessible through a standardized communication protocol: Requires Data identifier (IRI, URL).<br>Check the application protocol of the data identifier based on the scheme part of the given IRI. In case external metadata is linked to the landing page by typed links, use the data identifier specified in the typed link.<br>Provide transfer standard e.g. from FsF-A1-03D 10.5281/zenodo.4081213 - http, https or FTP. Also, because v2 of AgReFed assessment includes information about API, list API including version."
+                },
+                {
+                    "id": 4,
+                    "text": "Non-standard web service (e.g. OpenAPI/Swagger/informal API)",
+                    "evidence": "Please provide the data identifier (IRI, URL) or and/or metadata link through which the data is accessed",
+                    "threshold": "min",
+                    "value": 4,
+                    "compliance": 2,
+                    "data_steward_evidence": "Aligns with F-A1-03D - Data is accessible through a standardized communication protocol: Requires Data identifier (IRI, URL).<br>Check the application protocol of the data identifier based on the scheme part of the given IRI. In case external metadata is linked to the landing page by typed links, use the data identifier specified in the typed link.<br>Provide transfer standard e.g. from FsF-A1-03D 10.5281/zenodo.4081213 - http, https or FTP. Also, because v2 of AgReFed assessment includes information about API, list API including version."
+                },
+                {
+                    "id": 5,
+                    "text": "Standard web service API (e.g. OGC)",
+                    "evidence": "Please provide the data identifier (IRI, URL) or and/or metadata link through which the data is accessed",
+                    "threshold": "yes",
+                    "value": 5,
+                    "compliance": 3,
+                    "data_steward_evidence": ""
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "Number": "q-7",
+            "Question": "Q7 The repository/registry agrees to maintain the persistence of the metadata record, even if the data product is no longer available.",
+            "Help": "<p>The repository or registry containing the metadata record must agree to maintain the persistence of that record. This ensures that even if the dataset itself is no longer available (it may have been changed, removed or superceded), its metadata record will persist so that the dataset can be cited and followed up in future. </p><p>The persistence of metadata records will be determined by the preservation policy of the PID provider. It may be necessary to check with your repository cutator/manager and/or library support.</p><p>For further information about metadata persistence, please refer to <a href='https://github.com/au-research/FAIR-data-101-training/blob/main/2-accessible/webinar-4-slides.pdf' target='_blank'>this ARDC training resource</a>.</p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown / unsure",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "No (or not applicable, if no metadata record exists)",
+                    "evidence": "This is at the repository level (see R10 of trusted assessment) and/or the preservation policy of the PID provider. In the case that you can not answer this, check with your repository cutator/manager and or library support. Or, mark as 'unsure'",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "As at FsF-A2-01M 10.5281/zenodo.4081213. This is at the repository level (see R10 of trusted assessment) and or the preservation policy of the PID provider. The provider will most likely not be able to provide evidence for this question or answer it"
+                },
+                {
+                    "id": 2,
+                    "text": "Yes",
+                    "evidence": "This is at the repository level (see R10 of trusted assessment) and/or the preservation policy of the PID provider",
+                    "threshold": "yes",
+                    "value": 2,
+                    "compliance": 3,
+                    "data_steward_evidence": "As at FsF-A2-01M 10.5281/zenodo.4081213. This is at the repository level (see R10 of trusted assessment) and or the preservation policy of the PID provider. The provider will most likely not be able to provide evidence for this question or answer it"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "Number": "q-8",
+            "Question": "Q8 The data products are available in (an) open (file) format(s)",
+            "Help": "<p>Open file formats can be freely accessed and can be used and re-used with free and open source (FOSS) software. They are not proprietary or locked to specific software. Open data is machine readable. Some examples of open file formats are XML (eXtensible Markup Language), CSV (Comma Separated Value), JSON (JavaScript Object Notation).</p><p>For more information please refer to the National Archives of Australia page about <a href='https://www.naa.gov.au/information-management/building-interoperability/interoperability-development-phases/data-governance-and-management/open-data-and-formats' target='_blank'>Open data and formats</a>.</p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "Data are mostly available only in a proprietary format",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which the data is accessed, or provide detail of format/s",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps. FsF-R1.3-02D - data is available in a file format recommended by the target research community. As at FsF-A2-01M 10.5281/zenodo.4081213 : Extract file format information (mime-type) from the metadata based on elements, e.g., datacite:Format, schema.org: fileFormat, dc:format. Check if the format is an open and long-term file format (see comment*) in FsF-R1.3-02D - there are constraints/limitations here). Note constraints encountered."
+                },
+                {
+                    "id": 2,
+                    "text": "Data are available in an open format",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which the data is accessed, or provide detail of format/s",
+                    "threshold": "no",
+                    "value": 2,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps. FsF-R1.3-02D - data is available in a file format recommended by the target research community. As at FsF-A2-01M 10.5281/zenodo.4081213 : Extract file format information (mime-type) from the metadata based on elements, e.g., datacite:Format, schema.org: fileFormat, dc:format. Check if the format is an open and long-term file format (see comment*) in FsF-R1.3-02D - there are constraints/limitations here). Note constraints encountered."
+                },
+                {
+                    "id": 3,
+                    "text": "Data are available in an open, documented, widely-used standard format (i.e. NetCDF, CSV, JSON, XML, etc)",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which the data is accessed, or provide detail of format/s",
+                    "threshold": "yes",
+                    "value": 3,
+                    "compliance": 3,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps. FsF-R1.3-02D - data is available in a file format recommended by the target research community. As at FsF-A2-01M 10.5281/zenodo.4081213 : Extract file format information (mime-type) from the metadata based on elements, e.g., datacite:Format, schema.org: fileFormat, dc:format. Check if the format is an open and long-term file format (see comment*) in FsF-R1.3-02D - there are constraints/limitations here). Note constraints encountered."
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "Number": "q-9",
+            "Question": "Q9 The data is machine readable (see Glossary for definition)",
+            "Help": "<p>The data is available in a format that is structured and can be read by machines (computers).</p><p>Please refer to the Open Data Handbook <a href='https://opendatahandbook.org/glossary/en/terms/machine-readable/' target='_blank'>Glossary entry</a></p>.",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "The data are unstructured",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which the data is accessed, Can you tell us something about your plans to deliver data in a structured, machine readable format? Alternatively, can you provide some further detail of the structure of your data that suits your purpose? (for example text, video, image, audio)",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps. See AgReFed glossary definition to evaluate. List the data format and describe the structure. Structure may not be defined in AgReFed policy, but could be described as \"Structured data is data that adheres to a pre-defined data model and is therefore straightforward to analyse. Structured data conforms to a tabular format with relationship between the different rows and columns. Common examples of structured data are Excel files or SQL databases\" source - https://www.bigdataframework.org/data-types-structured-vs-unstructured-data. Note - Exceptions should be taken to Technical Committee as depending on the domain (e.g. social survey data) may not be structured yet highly relevant to agriculture. Structure is not covered specifically at 10.5281/zenodo.4081213 - these assessment details need confirmation."
+                },
+                {
+                    "id": 2,
+                    "text": "The data are structured and machine-readable (i.e. csv, JSON, XML, RDF, database files, etc)",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which the data is accessed, or provide details of structure",
+                    "threshold": "yes",
+                    "value": 2,
+                    "compliance": 3,
+                    "data_steward_evidence": "See AgReFed glossary definition to evaluate. List the data format and describe the structure. Structure may not be defined in AgReFed policy, but could be described as \"Structured data is data that adheres to a pre-defined data model and is therefore straightforward to analyse. Structured data conforms to a tabular format with relationship between the different rows and columns. Common examples of structured data are Excel files or SQL databases\" source - https://www.bigdataframework.org/data-types-structured-vs-unstructured-data. Note - Exceptions should be taken to Technical Committee as depending on the domain (e.g. social survey data) may not be structured yet highly relevant to agriculture. Structure is not covered specifically at 10.5281/zenodo.4081213 - these assessment details need confirmation. "
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "Number": "q-10",
+            "Question": "Q10 The data are semantically interoperable, because they use standard, accessible ontologies and/or vocabularies to describe the data elements/variables.",
+            "Help": "<p>Data is <a href='https://en.wikipedia.org/wiki/Semantic_interoperability' target='_blank'>semantically interoperable</a> when it has unambiguous and shared meaning, which allows machines (computers) to exchange data. This is achieved through metadata and labelling of data elements or fields in a clear and unambiguous fashion. Where data elements are not labelled or labels consist of code, data interoperability is not possible. </p><p>When labels exist but are not clearly defined, and therefore, human interpretation is required, the AgReFed minimum standards are met.</p><p>If labels meet recognised standards, the data meets AgReFed standards.</p><p>Ideally, data elements should be described with the use of standard, accessible <a href='https://en.wikipedia.org/wiki/Ontology_(information_science)' target='_blank'>ontologies</a> and/or published vocabularies, to provide full semantic interoperability. As the availability of agricultural ontologies and vocabularies is still limited, AgReFed considers this as the ideal, but accepts well described data elements without reference to ontologies and vocabularies to meet minimum criteria.</p><p>Examples of ontologies/vocabularies:</p><p><a href='https://www.fao.org/agrovoc/about' target='_blank'>AGROVOC</a></p><p><a href='https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-research-classification-anzsrc/latest-release' target='_blank'>Australian and New Zealand Standard Research Classification (ANZSRC)</a></p><p><a href='https://cropontology.org/' target='_blank'>Crop Ontology</a></p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "Data elements are not described (i.e. fields or objects are labelled with codes or not at all)",
+                    "evidence": "Do you have any comments on plans to implement or otherwise?",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text": "Data elements are described (so that a human user can correctly interpret the data), but no standards have been used in the description ",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which the data is accessed.",
+                    "threshold": "min",
+                    "value": 2,
+                    "compliance": 1,
+                    "data_steward_evidence": "Access or ask to access the data if possible. Assess whether you deem the data would be understandable by a person with reasonable knowledge in that domain/area of research"
+                },
+                {
+                    "id": 3,
+                    "text": "Recognised standards have been used in the description of data elements, but no published vocabularies with resolvable URIs",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which the data is accessed. Please also list some examples of the terms used to describe your data/the column header, that you see as governed/regulated/authoritative standards in your field of research.",
+                    "threshold": "min",
+                    "value": 3,
+                    "compliance": 2,
+                    "data_steward_evidence": "Note the standards used to describe the data elements. Where possible this should be done by the data provider who can judge what are applicable standards for their domain/area of research"
+                },
+                {
+                    "id": 4,
+                    "text": "Published vocabularies using resolvable global identifiers linking to explanations are used, so that the data can be read and understood by machines as well as humans.",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which the data is accessed. Please also list some examples of the terms used to describe your data/the column header, that you see as governed/regulated/authoritative standards in your field of research.",
+                    "threshold": "yes",
+                    "value": 4,
+                    "compliance": 3,
+                    "data_steward_evidence": "Assessment as per FsF-I1-02M - Metadata uses semantic resources:<br>This assessment is the continuation of the assessment FsF-I1-01M, but focuses on the metadata content:<br>Extract namespaces declared from the machine-actionable metadata document. Filter out common namespaces (e.g., rdf, rdfs, xsd, owl)<br>Compare the remaining namespaces with entries from existing (known) ontology registries (see examples listed in Related Resource.<br>It is also recommended that FsF-I1-01M be assessed - Metadata is represented using a formal knowledge representation language. See FsF-I1-01M assessment requirements and assessment for further details."
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "Number": "q-11",
+            "Question": "Q11 The relationships to other data and resources (e.g. related datasets, services, publications, grants, etc) are described in the metadata or data, to provide context around the data.",
+            "Help": "<p>  To provide additional context to the data (particularly if the dataset is not accessible), the relationships to other data and resources (e.g. related datasets, services, publications, grants, etc) should be provided as URLs or URIs within the metadata. This satisfies AgReFed acceptability standards.</p><p>The AgReFed ideal is to provide those links in a machine-readable format, such as the <a href='https://www.w3.org/TR/rdf11-concepts/' target='_blank'>Resource Description Framework (RDF)</a>. This allows full discovery of all linked resources by machines as well as humans.</p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "There are no links to other metadata or data",
+                    "evidence": "Do you have any comments on plans to implement or otherwise?",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text": "The metadata record includes URI links to related metadata, data and definitions",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which these metadata provision endpoints are accessible?",
+                    "threshold": "min",
+                    "value": 2,
+                    "compliance": 2,
+                    "data_steward_evidence": "As per FsF-I3-01M - Metadata includes links between the data and its related entities <br>Use the data identifier to access its metadata record. <br>Check the metadata elements which indicate the relationship between data and related entities. <br>Test the links to the related entities are active (not broken links)."
+                },
+                {
+                    "id": 3,
+                    "text": "Qualified links to other resources are recorded in a machine readable format, e.g. a linked data format such as RDF",
+                    "evidence": "Please provide the data identifier (URI, URL) or and/or metadata link through which these metadata provision endpoints are accessible",
+                    "threshold": "yes",
+                    "value": 3,
+                    "compliance": 3,
+                    "data_steward_evidence": "This is as per sF-I3-01M - Metadata includes links between the data and its related entities plus FsF-I1-02M - Metadata uses semantic resources.<br>Use the data identifier to access its metadata record. <br>Check the metadata elements which indicate the relationship between data and related entities. <br>Test the links to the related entities are active (not broken links). <br>Retrieve the Machine-actionable representation (e.g., RDF) of the metadata using the assessment criteria under FsF-I1-02M."
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "Number": "q-12",
+            "Question": "Q12 Machine-readable data licenses are assigned to each data product, and are stated in the metadata record.",
+            "Help": "<p>Data licenses can be custom (non-standard), or standard ones such as <a href='https://creativecommons.org/licenses/' target='_blank'>Creative Commons (CC) licenses</a>, and the licence should be included in the metadata.</p><p>To be acceptable under AgReFed standards, a machine-readable link to the data license deed (the full text of the license terms and conditions) must be included in the metadata. This could, for example, be link to the deed of a specific CC license, such as: <a href='https://creativecommons.org/licenses/by/4.0/' target='_blank'>https://creativecommons.org/licenses/by/4.0/</a>, or a link to the deed of the non-standard license used.</p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "No license is applied",
+                    "evidence": "Do you have any comments on plans to implement or otherwise?",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text": "Non-standard license applied, without a license deed URL encoded in a machine-readable format (e.g. RDF/XML) in the metadata record",
+                    "evidence": "Please provide link to the metadata record that contains this licence",
+                    "threshold": "no",
+                    "value": 2,
+                    "compliance": 0,
+                    "data_steward_evidence": "This assessment is a modification of assessment for FsF-R1.1-01M . AgReFed states that the licence must be in the metadata, therefore we do not ask for the evidence of Data identifier (IRI, URL). We ask for link to metadata that contains the licence details only. <br>For assessment (modified from FsF-R1.1-01M): <br>Verify the presence/absence of metadata element(s) corresponding to licence information of the data <br>Use the licence information (name or URI) to request additional information (e.g. OSI approval) from an external licence registry (e.g. SPDX) <br>AgReFed Addition: Check that information about the licence can be retrieved via the metadata programmatically. The metadata provision endpoint should contain the licence."
+                },
+                {
+                    "id": 3,
+                    "text": "Non-standard license applied, WITH the license deed URL encoded in a machine-readable format (e.g. RDF/XML) in the metadata record",
+                    "evidence": "Please provide link to the metadata record that contains this licence",
+                    "threshold": "min",
+                    "value": 3,
+                    "compliance": 2,
+                    "data_steward_evidence": "This assessment is a modification of assessment for FsF-R1.1-01M . AgReFed states that the licence must be in the metadata, therefore we do not ask for the evidence of Data identifier (IRI, URL). We ask for link to metadata that contains the licence details only. <br>For assessment (modified from FsF-R1.1-01M): <br>Verify the presence/absence of metadata element(s) corresponding to licence information of the data <br>Use the licence information (name or URI) to request additional information (e.g. OSI approval) from an external licence registry (e.g. SPDX) <br>AgReFed Addition: Check that information about the licence can be retrieved via the metadata programmatically. The metadata provision endpoint should contain the licence."
+                },
+                {
+                    "id": 4,
+                    "text": "Standard license applied (e.g. Creative Commons), without a license deed URL encoded in a machine-readable format (e.g. RDF/XML) in the metadata record",
+                    "evidence": "please provide a weblink to the type of licence that is applied to this data",
+                    "threshold": "no",
+                    "value": 4,
+                    "compliance": 0,
+                    "data_steward_evidence": "This assessment is a modification of assessment for FsF-R1.1-01M . AgReFed states that the licence must be in the metadata, therefore we do not ask for the evidence of Data identifier (IRI, URL). We ask for link to metadata that contains the licence details only. <br>For assessment (modified from FsF-R1.1-01M): <br>Verify the presence/absence of metadata element(s) corresponding to licence information of the data <br>Use the licence information (name or URI) to request additional information (e.g. OSI approval) from an external licence registry (e.g. SPDX) <br>AgReFed Addition: Check that information about the licence can be retrieved via the metadata programmatically. The metadata provision endpoint should contain the licence."
+                },
+                {
+                    "id": 5,
+                    "text": "Standard license applied (e.g. Creative Commons), WITH the license deed URL encoded in a machine-readable format (e.g. RDF/XML) in the metadata record",
+                    "evidence": "please provide a weblink to the type of licence that is applied to this data",
+                    "threshold": "yes",
+                    "value": 5,
+                    "compliance": 3,
+                    "data_steward_evidence": "This assessment is a modification of assessment for FsF-R1.1-01M . AgReFed states that the licence must be in the metadata, therefore we do not ask for the evidence of Data identifier (IRI, URL). We ask for link to metadata that contains the licence details only. <br>For assessment (modified from FsF-R1.1-01M): <br>Verify the presence/absence of metadata element(s) corresponding to licence information of the data <br>Use the licence information (name or URI) to request additional information (e.g. OSI approval) from an external licence registry (e.g. SPDX) <br>AgReFed Addition: Check that information about the licence can be retrieved via the metadata programmatically. The metadata provision endpoint should contain the licence."
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "Number": "q-13",
+            "Question": "Q13 The provenance of the data product is described in the metadata, i.e. project objectives, data generation/collection (including from external sources) and processing workflows.",
+            "Help": "<p>The provenance of the dataset or digital resource should be described in the metadata. This includes history of ownership, project objectives, data generation and collection information (including from external sources) and the nature of processing workflows used. </p><p>There are no minimum standards regarding the minimum provenance metadata, but the AgReFed requirement is that provenance information is comprehensively described. Minimum AgReFed standards are met when this information is included in text or pdf format, but the ideal is to include the provenance information is included in a machine-readable format. This can be achieved by including it in the metadata schema or using the <a href='https://www.w3.org/TR/rdf11-concepts/' target='_blank'>Resource Description Framework (RDF)</a>, <a href='https://www.json.org/json-en.html' target='_blank'>JSON</a> or <a href='https://www.unidata.ucar.edu/software/netcdf/' target='_blank'>Network Common Data Form (NetCDF)</a>.</p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "No provenance information is recorded",
+                    "evidence": "Do you have any comments on plans to implement or otherwise?",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text": "Partially recorded",
+                    "evidence": "Please provide link to the metadata record that contains the provenance information",
+                    "threshold": "no",
+                    "value": 2,
+                    "compliance": 0,
+                    "data_steward_evidence": "This assessment is a modification of assessment for FsF-R1.2-01M . AgReFed states that the provenance information must be in the metadata, therefore we do not ask for the evidence of Data identifier (IRI, URL). We ask for link to metadata that contains the licence details only. <br>Assessment, as modified from FsF-R1.2-01M:  <br>Verify the presence/absence of metadata element(s) corresponding to the minimum data provenance properties. <br>AgReFed Addition: Check that information about the licence can be retrieved via the metadata programmatically. The metadata provision endpoint should contain the licence."
+                },
+                {
+                    "id": 3,
+                    "text": "Comprehensively recorded in a text format (i.e. TXT or PDF)",
+                    "evidence": "Please provide link to the metadata record that contains the provenance information",
+                    "threshold": "min",
+                    "value": 3,
+                    "compliance": 2,
+                    "data_steward_evidence": "This assessment is a modification of assessment for FsF-R1.2-01M . AgReFed states that the provenance information must be in the metadata, therefore we do not ask for the evidence of Data identifier (IRI, URL). We ask for link to metadata that contains the licence details only. <br>Assessment, as modified from FsF-R1.2-01M:  <br>Verify the presence/absence of metadata element(s) corresponding to the minimum data provenance properties. <br>AgReFed Addition: Check that information about the licence can be retrieved via the metadata programmatically. The metadata provision endpoint should contain the licence."
+                },
+                {
+                    "id": 4,
+                    "text": "Comprehensively recorded in a machine readable format (i.e. in metadata record's schema or PROV, or in RDF, JSON, NetCDF, XML, etc)",
+                    "evidence": "Please provide link to the metadata record that contains the provenance information",
+                    "threshold": "yes",
+                    "value": 4,
+                    "compliance": 3,
+                    "data_steward_evidence": "This assessment is a modification of assessment for FsF-R1.2-01M . AgReFed states that the provenance information must be in the metadata, therefore we do not ask for the evidence of Data identifier (IRI, URL). We ask for link to metadata that contains the licence details only. <br>Assessment, as modified from FsF-R1.2-01M:  <br>Verify the presence/absence of metadata element(s) corresponding to the minimum data provenance properties. <br>AgReFed Addition: Check that information about the licence can be retrieved via the metadata programmatically. The metadata provision endpoint should contain the licence."
+                }
+            ]
+
+        },
+        {
+            "id": 14,
+            "Number": "q-14",
+            "Question": "Q14 The preferred citation for the data product is provided in metadata record",
+            "Help": "<p>The citation of dataset and other digital resources is an important practice to ensure recognition as a research output. Refer to the Australian National Data Service (ANDS) <a href='https://www.ands.org.au/working-with-data/citation-and-identifiers/data-citation' target='_blank'>Data citation</a> page for further information.</p><p>DOIs are used to uniquely identify both research data and software, and provide a persistent link to the location of the object on the internet, they also enable citation and citation metrics. For more information, please refer to <a href='https://ardc.edu.au/resources/working-with-data/citation-identifiers/data-citation/' target='_blank'>DOIs for data citation</a></p>",
+            "Options": [
+                {
+                    "id": 0,
+                    "text": "Unknown",
+                    "evidence": null,
+                    "threshold": "no",
+                    "value": 0,
+                    "compliance": 0,
+                    "data_steward_evidence": ""
+                },
+                {
+                    "id": 1,
+                    "text": "No",
+                    "evidence": "Do you have any comments on plans to implement or otherwise?",
+                    "threshold": "no",
+                    "value": 1,
+                    "compliance": 0,
+                    "data_steward_evidence": "Provide any relevant comments on providers next steps"
+                },
+                {
+                    "id": 2,
+                    "text": "Citation does not include identifier",
+                    "evidence": "Please provide link to the metadata record that contains the citation",
+                    "threshold": "no",
+                    "value": 2,
+                    "compliance": 0,
+                    "data_steward_evidence": "Verify the presence/absence of metadata element(s) corresponding to citation. Ensure that the citation includes a link that resolves to the data identifier (from Q1)"
+                },
+                {
+                    "id": 3,
+                    "text": "Citation includes identifier",
+                    "evidence": "Please provide link to the metadata record that contains the citation",
+                    "threshold": "yes",
+                    "value": 3,
+                    "compliance": 3,
+                    "data_steward_evidence": "Verify the presence/absence of metadata element(s) corresponding to citation. Ensure that the citation includes a link that resolves to the data identifier (from Q1"
+                }
+            ]
+        }
+    ]
+}
