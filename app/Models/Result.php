@@ -2,16 +2,11 @@
 
 namespace App\Models;
 
-//use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Result extends Model
 {
 
-    public function assessment()
-    {
-        return $this->belongsTo(Assessment::class);
-    }
     protected $fillable = [
         'assessment_id',
         'assessment_version',
@@ -26,5 +21,10 @@ class Result extends Model
         'assessment_result' => 'array',
         'fuji_result' => 'array'
     ];
+
+    public function assessment()
+    {
+        return $this->belongsTo(Assessment::class);
+    }
 
 }

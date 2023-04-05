@@ -13,15 +13,6 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * Get the assessments for the user.
-     */
-    public function assessments()
-    {
-        return $this->hasMany(Assessment::class);
-    }
-
-
-    /**
      * The attributes that are mass assignable.
      *
      * @var string[]
@@ -51,4 +42,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Get the assessments for the user.
+     */
+    public function assessments()
+    {
+        return $this->hasMany(Assessment::class);
+    }
+
 }

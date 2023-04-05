@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
-//use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Assessment extends Model
 {
+
+    protected $fillable = ['resource_name', 'resource_description'];
+
     /**
      * Get the user that owns the assessment.
      */
@@ -17,10 +19,7 @@ class Assessment extends Model
 
     public function results()
     {
-        return  $this->hasmany(Result::class);
+        return $this->hasmany(Result::class);
     }
-
-    protected $fillable = ['resource_name', 'resource_description'];
-
 
 }

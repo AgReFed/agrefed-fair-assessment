@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Assessment;
 use App\Models\Result;
 use Carbon\Carbon;
-use Carbon\Exceptions\BadComparisonUnitException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-//use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Gate;
 
 class AssessmentController extends Controller
 {
@@ -35,33 +34,26 @@ class AssessmentController extends Controller
         // list assessments for logged in user only
         $id = Auth::id();
         $assessments = Assessment::where("user_id", $id)
-                                    ->orderBy('id', 'DESC')
-                                    ->get()
-                                    ->toArray();
+            ->orderBy('id', 'DESC')
+            ->get()
+            ->toArray();
 
         return response($assessments);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Create a new assessment and result
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //not used
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      */
     public function store(Request $request)
     {
-        // when user starts a new assessment
+        $validated = $request->validate([
+                                            'resource_name' => 'required'
+                                        ]);
+
         $assessment = new Assessment;
-        $assessment->user_id = $request->input('user_id');
+        $assessment->user_id = Auth::id();
         $assessment->resource_name = $request->input('resource_name');
         $assessment->resource_description = $request->input('resource_description');
         $assessment->submitted = false;
@@ -69,50 +61,38 @@ class AssessmentController extends Controller
         $assessment->save();
 
         $result = new Result([
-            'assessment_reason' => $request->input('assessment_reason'),
-            'assessment_version' => $request->input('assessment_version'),
-            'assessment_result' => json_encode($request->input('assessment_results')),
-            'fuji_result' => json_encode($request->input('fuji_result')),
-            'submitted' => false
-
-        ]);
+                                 'assessment_reason' => $request->input('assessment_reason'),
+                                 'assessment_version' => $request->input('assessment_version'),
+                                 'assessment_result' => json_encode($request->input('assessment_results')),
+                                 'fuji_result' => json_encode($request->input('fuji_result')),
+                                 'submitted' => false
+                             ]);
 
         $assessment->results()->save($result);
 
         // return status and id of newly created assessment record
-       return response()->json(array('success' => true, 'id' => $result->id, 'assessment_id' => $assessment->id  ), 200);
+        return response()->json(array('success' => true, 'id' => $result->id, 'assessment_id' => $assessment->id), 200);
     }
 
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      */
     public function show($id)
     {
-        // with ensures that it retrieves the child records (= results) with the assessment
+        // 'with' ensures that it retrieves the child records (= results) with the assessment
         $assessment = Assessment::where('id', $id)
-            ->with(['results' => function($query) {
-                $query->orderBy('id', 'asc');
-                }
-            ])
-        ->get();
+            ->with([
+                       'results' => function ($query) {
+                           $query->orderBy('id', 'asc');
+                       }
+                   ])
+            ->first();
 
-        return response()->json($assessment[0]);
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id, $result_id)
-    {
-        // with also retrieves the child record (= result) with the assessment
-        $assessment = Assessment::where('id', $id)->with('results')->where('id',$result_id);
+        // check if user it authorised to view this assessment, returns 403
+        Gate::authorize('get-assessment', $assessment);
 
         return response()->json($assessment);
     }
@@ -120,15 +100,47 @@ class AssessmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     * @return
+     */
+    public function edit($id, $result_id)
+    {
+        // with also retrieves the child record (= result) with the assessment
+        $assessment = Assessment::where('id', $id)->with('results')->where('id', $result_id)->first();
+
+        // check if requested assessment exists
+        if (empty($assessment)) {
+            abort(404, "Assessment doesn't exist");
+        }
+
+        // check if user it authorised to access this assessment, returns 403
+        Gate::authorize('get-assessment', $assessment[0]);
+
+        return response()->json($assessment);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
      * @return
      */
     public function reassess($result_id)
     {
-        // with also retrieves the child record (= result) with the assessment
         $result = Result::find($result_id);
 
-        //return $result;
+        // check if requested assessment exists
+        if (empty($result)) {
+            // if no result found, send to listing
+            return redirect()->route('assessment_list');
+        } else {
+            $assessment = Assessment::find($result->assessment_id);
+
+            // check if user it authorised to access this assessment, if not, send to listing
+            if (Gate::denies('get-assessment', $assessment)) {
+                return redirect()->route('assessment_list');
+            }
+        }
 
         $new_result = $result->replicate();
 
@@ -141,21 +153,26 @@ class AssessmentController extends Controller
         $new_result_id = $new_result->id;
 
         return redirect()->route('getResultId', ['result_id' => $new_result_id]);
-
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @return
      */
     public function update(Request $request)
     {
-        // need to update both assessment and result tables
+        $validated = $request->validate([
+                                            'resource_name' => 'required',
+                                        ]);
 
+        // need to update both assessment and result tables
         $result = Result::find($request->input('result_id'));
         $assessment = Assessment::find($result->assessment_id);
+
+        // check if user it authorised for this assessment, returns 403 if not
+        Gate::authorize('get-assessment', $assessment);
 
         $assessment->resource_name = $request->input('resource_name');
         $assessment->resource_description = $request->input('resource_description');
@@ -169,17 +186,6 @@ class AssessmentController extends Controller
         $result->fuji_result = $request->input('fuji_result');
 
         $result->save();
-
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        // not used
-    }
 }

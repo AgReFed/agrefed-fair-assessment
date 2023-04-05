@@ -1,27 +1,5 @@
 <template>
     <div>
-<!--        <table class="table">-->
-<!--            <thead>-->
-<!--            <tr>-->
-<!--                <th>ID</th>-->
-<!--                <th>Name</th>-->
-<!--                <th>Url</th>-->
-<!--                <th>Created</th>-->
-<!--                <th>Reason</th>-->
-<!--            </tr>-->
-<!--            </thead>-->
-<!--            <tbody>-->
-<!--            <tr v-for="assessment in assessments" :key="assessment.id">-->
-<!--                <td>{{ assessment.id }}</td>-->
-<!--                <td><a :href="'assessments/' + assessment.id">{{ assessment.resource_name }}</a></td>-->
-<!--                <td><a :href="assessment.url" target="_blank">{{ assessment.resource_url }}</a></td>-->
-<!--                <td>{{ assessment.created_at | niceDate }}</td>-->
-<!--                <td>{{ assessment.assessment_reason }}</td>-->
-<!--            </tr>-->
-<!--            </tbody>-->
-<!--        </table>-->
-
-        <!-- display questions and results array-->
         <b-table
             :items="assessments"
             :fields="fields"
@@ -40,14 +18,11 @@
 
             <template #cell(resource)="data">
                 {{ data.item.resource_name }}
-<!--                <a :href="'assessments/' + data.item.id">{{ data.item.resource_name }}</a><br>-->
-<!--                <b-link :href="data.item.resource_url" target="_blank">{{ data.item.resource_url }}</b-link>-->
             </template>
 
             <template #cell(actions)="data">
                 <div v-if="data.item.submitted" class="mt-2">
                     <b-btn variant="primary" class="btn btn-sm" :href="'assessments/' + data.item.id">Show</b-btn>
-<!--                    <b-btn variant="info" class="btn btn-sm">Reassess</b-btn>-->
                 </div>
                 <div v-else class="mt-2">
                     <b-btn variant="warning" class="btn btn-sm" :href="'assessments/' + data.item.id">Continue to edit</b-btn>

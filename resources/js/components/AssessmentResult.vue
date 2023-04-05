@@ -438,7 +438,7 @@ export default {
 
                 // iterate through (re-) assessments
                 for (var key in this.assessment.results) {
-                    this.saved_results_number +=1;
+                    this.saved_results_number += 1;
 
                     // process agrefed assessment json and fuji json
                     this.assessment_results[key] = this.assessment.results[key].assessment_result;
@@ -448,8 +448,16 @@ export default {
                     const current_fuji_result = this.fuji_results[key] ?? null;
 
                     // temp vars reset
-                    f_score[key] = 0; a_score[key] = 0; i_score[key] = 0; r_score[key] = 0; fair_score[key] = 0;
-                    f_max_score[key] = 0; a_max_score[key] = 0; i_max_score[key] = 0; r_max_score[key] = 0; fair_max_score[key] = 0;
+                    f_score[key] = 0;
+                    a_score[key] = 0;
+                    i_score[key] = 0;
+                    r_score[key] = 0;
+                    fair_score[key] = 0;
+                    f_max_score[key] = 0;
+                    a_max_score[key] = 0;
+                    i_max_score[key] = 0;
+                    r_max_score[key] = 0;
+                    fair_max_score[key] = 0;
 
                     // loop through results array to group scores
                     for (const key2 in current_assessment_result) {
@@ -459,7 +467,7 @@ export default {
                         fair_score[key] += result.score;
                         fair_max_score[key] += result.max_score;
 
-                        switch(result.id) {
+                        switch (result.id) {
                             case 1:
                             case 2:
                             case 3:
@@ -505,18 +513,18 @@ export default {
 
                     let processFuji = true
 
-                    if(current_fuji_result === null) {
+                    if (current_fuji_result === null) {
                         // if fuji_results field is empty or null
                         processFuji = false
                     } else {
                         // if fuji_results doesn't have results (fuji api returned an error)
-                        if(!('metric_specification' in current_fuji_result)) {
+                        if (!('metric_specification' in current_fuji_result)) {
                             processFuji = false
                         }
                     }
 
                     // show fuji results if available, otherwise zero result so bars show correctly per result
-                    if(processFuji === true) {
+                    if (processFuji === true) {
                         this.fuji_percent_f[key] = current_fuji_result.summary.score_percent.F;
                         this.fuji_percent_a[key] = current_fuji_result.summary.score_percent.A;
                         this.fuji_percent_i[key] = current_fuji_result.summary.score_percent.I;
@@ -534,7 +542,9 @@ export default {
                 } //(var key in this.assessment.results)
 
             })
-            .catch(err => console.log("Show assessment result error: " + err))
+            .catch(err => {
+                window.location.href = window.location.origin + '/assessment_list';
+            })
     },
     methods: {
         printPage () {

@@ -411,9 +411,9 @@ export default {
 
                         // only load assessment if it is unsubmitted (unfinished)
                         if (self.current_result.submitted === true) {
-                            self.alert_message = "You cannot edit a submitted assessment. Please create a new assessment. " +
-                                                 "Alternatively, select an assessment to run a re-assessment."
+                            self.alert_message = "You cannot edit a submitted assessment."
                             self.showAlert()
+                            window.location.href = window.location.origin + '/assessment_list'
 
                         } else {
                             self.form.assessment_id = self.current_result.assessment_id;
@@ -425,12 +425,16 @@ export default {
                         }
 
                     } else {
-                        self.alert_message = "Unauthorised. Please create a new assessment."
+                        self.alert_message = "Unauthorised or assessment not found. Please create a new assessment."
                         self.showAlert()
+                        window.location.href = window.location.origin + '/assessment_list'
                     }
 
                 })
-                .catch(err => console.log("Load previous assessment error: " + err))
+                .catch(err => {
+                    console.log("Error: " + err);
+                    window.location.href = window.location.origin + '/assessment_list'
+                })
         }
     },
     methods: {
@@ -490,35 +494,46 @@ export default {
                 // can run in the background
             }
         },
-        runFujiAssessment(url) {
-            // runs the fuji assessment on the specified metadata url; the fuji api url is specified in config db tbl
+        runFujiAssessment(metadata_url) {
+            // if user provided valid metadata url, run fuji assessment on it
 
-            var headers = {
-                "Authorization": "Basic bWFydmVsOndvbmRlcndvbWFu",
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*"
+            if(this.isValidHttpUrl(metadata_url)) {
+
+                var headers = {
+                    "Authorization": "Basic bWFydmVsOndvbmRlcndvbWFu",
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                }
+                var data = {
+                    "metadata_service_endpoint": "",
+                    "metadata_service_type": "oai_pmh", // options: ogc csw or sparql
+                    "object_identifier": metadata_url,
+                    "test_debug": true,
+                    "use_datacite": true
+                }
+
+                this.axios
+                    // call the fuji API'S evaluate endpoint (needs auth and header)
+                    .post(this.$config.fuji_url + 'evaluate', data, {headers:headers})
+                    .then(response => {
+                        this.form.fuji_result = response.data;
+                    })
+                    .catch(err => {
+                        this.form.fuji_result = err;
+                    })
             }
-            var data = {
-                "metadata_service_endpoint": "",
-                "metadata_service_type": "oai_pmh", // options: ogc csw or sparql
-                "object_identifier": url,
-                "test_debug": true,
-                "use_datacite": true
-            }
-
-            this.axios
-                // call the fuji API'S evaluate endpoint (needs auth and header)
-                .post(this.$config.fuji_url + 'evaluate', data, {headers:headers})
-                .then(response => {
-                    this.form.fuji_result = response.data;
-                })
-                .catch(err => {
-                    this.form.fuji_result = err;
-                })
-
         },
         countDownChanged(dismissCountDown) {
             this.dismissCountDown = dismissCountDown
+        },
+        isValidHttpUrl(httpUrl) {
+            let url;
+            try {
+                url = new URL(httpUrl)
+            } catch {
+                return false
+            }
+            return true
         },
         showAlert() {
             this.dismissCountDown = this.dismissSecs

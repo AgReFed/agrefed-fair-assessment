@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AssessmentController;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,10 @@ use App\Http\Controllers\AssessmentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
 Route::get('/', function () {
     return view('home');
@@ -31,23 +37,23 @@ Route::get('/help', function () {
 
 Route::get('/assessment_list', function () {
     return view('assessment_list');
-})->middleware('auth');
+})->name('assessment_list')->middleware('auth:sanctum');
 
 Route::get('/assessment', function () {
     return view('assessment');
-})->middleware('auth');
+})->middleware('auth:sanctum');
 
 Route::get('/assessment/{result_id}', function () {
     return view('assessment');
-})->name('getResultId')->middleware('auth');
+})->name('getResultId')->middleware('auth:sanctum');
 
 Route::get('/assessments/{id}', function () {
     return view('assessment_result');
-})->middleware('auth');
+})->middleware('auth:sanctum');
 
 
 Route::get('reassessment/{result_id}', [AssessmentController::class, 'reassess'])
-    ->middleware('auth');
+    ->middleware('auth:sanctum');
 
 
 Auth::routes();
