@@ -132,7 +132,7 @@
                                 <template #title>F-UJI scores</template>
                                 The bars in this chart represent percentages calculated by the F-UJI assessment tool
                                 for each of F, A, I, R and for FAIR overall. They are calculated automatically (if a URL was
-                                provided for the digital resource), and are displayed here. The provide an insight into
+                                provided for the digital resource), and are displayed here. They provide an insight into
                                 the level of machine-readability of the resource's metadata.<br>
                                 Note that the metrics underlying this assessment are slightly different to the AgReFed
                                 metrics, so the scores may be different to the AgReFed scores. <br>

@@ -63,8 +63,8 @@ class AssessmentController extends Controller
         $result = new Result([
                                  'assessment_reason' => $request->input('assessment_reason'),
                                  'assessment_version' => $request->input('assessment_version'),
-                                 'assessment_result' => json_encode($request->input('assessment_results')),
-                                 'fuji_result' => json_encode($request->input('fuji_result')),
+                                 'assessment_result' => $request->input('assessment_results'),
+                                 'fuji_result' => Null,
                                  'submitted' => false
                              ]);
 
@@ -140,13 +140,17 @@ class AssessmentController extends Controller
             if (Gate::denies('get-assessment', $assessment)) {
                 return redirect()->route('assessment_list');
             }
+
+            // reset flag (needs setting for both assessment and assessment result
+            $assessment->submitted = false;
+            $assessment->save();
+
         }
 
         $new_result = $result->replicate();
 
         $new_result->created_at = Carbon::now();
         $new_result->updated_at = null;
-        $new_result->fuji_result = null;
         $new_result->submitted = false;
 
         $new_result->save();

@@ -422,6 +422,7 @@ export default {
                             self.form.resource_description = self.current_result.assessment.resource_description
                             self.form.assessment_reason = self.current_result.assessment_reason
                             self.form.assessment_results = self.current_result.assessment_result
+                            self.form.fuji_result = self.current_result.fuji_result
                         }
 
                     } else {
@@ -543,7 +544,7 @@ export default {
 
             if(this.form.result_id === null) {
 
-                // no assessmentresult id, so create a new assessment
+                // no assessment result id, so create a new assessment
 
                 let self = this
 
@@ -566,12 +567,10 @@ export default {
 
         },
         submitAssessment(){
-            // called on form submit, mark the assessment as completed and then view the assessment
+            // mark the assessment as completed and update
 
             this.form.submitted = true
             this.updateAssessment()
-
-            window.location.href = '/assessments/' + this.form.assessment_id;
 
         },
         updateAssessment(){
@@ -590,8 +589,14 @@ export default {
                     .catch(err => {
                         console.log(err);
                     })
+                    .finally(() => {
+                        if (this.form.submitted) {
+                            // need to ensure update is done before re-routing when form is submitted
+                            window.location.href = window.location.origin + '/assessments/' + this.form.assessment_id;
+                        }
+                    }
+                )
             }
-
         },
         processSelection(questionIndex) {
           // user has selected answer to a question: set answer, score, compliance level

@@ -73,8 +73,8 @@ export default {
       niceDate: function (value) {
           if (!value) return ''
           let assess_date = new Date(value); // date is passed as string
-          //return (assess_date.getMonth() + 1) + '/' + assess_date.getDate() + '/' +  assess_date.getFullYear() + ' ' +assess_date.getHours()+ ':' +  ("00" + assess_date.getMinutes()).slice(-2);
-          return (assess_date.getMonth() + 1) + '/' + assess_date.getDate() + '/' +  assess_date.getFullYear();
+          return assess_date.getDate() + '/' +  (assess_date.getMonth() + 1) + '/' + assess_date.getFullYear();
+
       }
     },
     created() {
