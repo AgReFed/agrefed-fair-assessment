@@ -1,9 +1,11 @@
-#AgReFed FAIR Assessment Tool
+# AgReFed FAIR Assessment Tool
 
-<a href="https://laravel.com" target="_blank"><img src="https://www.agrefed.org.au/images/AgReFed-Logo.jpg?v2" alt="AgReFed logo" width="400"></a>
+<a href="https://agrefed.org.au" target="_blank"><img src="https://www.agrefed.org.au/images/AgReFed-Logo.jpg?v2" alt="AgReFed logo" width="400"></a>
 
 ## About this tool
 The vision of the [Australian Agricultural Research Federation (AgReFed)](https://www.agrefed.org.au/) is **"to enable FAIR Agricultural data to accelerate innovation in and increase profitability and sustainability of Australian Agriculture"**. The FAIR assessment tool is part of the AgReFed Platform, and was released in early 2023 as one of the work packages of the AgReFed project.
+
+The Assessment tool's background and key functionality is described in the peer-reviewed journal article: Bahlo, C. 2024. Advancing FAIR Agricultural Data: The AgReFed FAIR Assessment Tool. Data Science Journal, 23: 18, pp. 1–11. DOI: [https://doi.org/10.5334/dsj-2024-018](https://doi.org/10.5334/dsj-2024-018)
 
 The [AgReFed Fair Assessment tool](http://assessment.agrefed.org.au) is free to use online, only requiring user registration (email, organisation, role). It is an application that allows data custodians and others to check datasets against the AgReFed FAIR data metrics. 
 
